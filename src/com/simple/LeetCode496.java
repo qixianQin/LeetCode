@@ -8,6 +8,13 @@ package com.simple;
  */
 public class LeetCode496 {
 
+    public static void main(String[] args) {
+        int[] result = nextGreaterElement(new int[]{4,1,2}, new int[]{1,3,4,2});
+        for (int i : result) {
+            System.out.println(i);
+        }
+    }
+
     /**
      * 暴力解法： 时间复杂度  O(n^2)
      * @param nums1
@@ -26,18 +33,11 @@ public class LeetCode496 {
             return result;
         }
         for (int i : nums1) {
-            boolean hasNext = false;
             for (int j : nums2) {
-                if (nums2[j] > nums1[i]) {
-                    result[i] = nums2[j];
-                    hasNext = true;
-                    break;
+                if (i == j) {
+                    
                 }
             }
-            if (!hasNext) {
-                result[i] = -1;
-            }
-            hasNext = false;
         }
         return result;
     }

@@ -112,7 +112,7 @@ public class LeetCode111 {
             QueueNode nodeDepth = queue.poll();
             TreeNode node = nodeDepth.node;
             int depth = nodeDepth.depth;
-            if (node.right == null && node.right == null) {
+            if (node.left == null && node.right == null) {
                 return depth;
             }
             if (node.left != null) {
@@ -122,7 +122,7 @@ public class LeetCode111 {
                 queue.offer((new QueueNode(node.right, depth + 1)));
             }
         }
-        return 0;
+        return 1;
     }
 
     public static int minDepth4(TreeNode root) {
